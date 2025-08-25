@@ -4,6 +4,7 @@ package com.example.bankapp.model;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 @Entity
@@ -17,7 +18,7 @@ public class Transaction {
 
     private String type;
 
-    private LocalTime timestamp;
+    private LocalDateTime timestamp;
 
     @ManyToOne
     @JoinColumn(name = "account_id")
@@ -26,7 +27,7 @@ public class Transaction {
     public Transaction() {
     }
 
-    public Transaction(BigDecimal amount, String type, LocalTime timestamp, Account account) {
+    public Transaction(BigDecimal amount, String type, LocalDateTime timestamp, Account account) {
         this.amount = amount;
         this.type = type;
         this.timestamp = timestamp;
@@ -57,11 +58,11 @@ public class Transaction {
         this.type = type;
     }
 
-    public LocalTime getTimestamp() {
+    public LocalDateTime getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(LocalTime timestamp) {
+    public void setTimestamp(LocalDateTime timestamp) {
         this.timestamp = timestamp;
     }
 
