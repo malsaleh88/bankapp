@@ -5,11 +5,9 @@ import com.example.bankapp.model.Transaction;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
-import java.util.Optional;
 
-public interface AccountRepository extends JpaRepository<Account, Long> {
+public interface TransactionRepository extends JpaRepository<Transaction, Long> {
 
-     Optional<Account> findByUsername(String username);
-
+    List<Transaction> findAccountId(Long accountId);
 
 }

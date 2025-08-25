@@ -24,6 +24,7 @@ public class Account {
     @OneToMany(mappedBy = "account")
     private List<Transaction> transaction;
 
+    @Transient
     private Collection<? extends GrantedAuthority> authorities;
 
     public Account() {
