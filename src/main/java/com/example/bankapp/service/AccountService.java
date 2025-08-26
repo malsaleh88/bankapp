@@ -90,7 +90,7 @@ public class AccountService implements UserDetailsService {
     }
 
     public List<Transaction> getTranscationHistory(Account account){
-        return transactionRepository.findAccountId(account.getId());
+        return transactionRepository.findByAccountId(account.getId());
     }
 
 
@@ -150,5 +150,10 @@ public class AccountService implements UserDetailsService {
 
 
     }
+
+    /*public List<Transaction> getTransactionHistory(Account account) {
+        return transactionRepository.findAllByAccountIdOrderByTimestampDesc(account.getId());
+    }*/
+
 
 }
